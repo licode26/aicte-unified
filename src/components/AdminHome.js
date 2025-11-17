@@ -1,0 +1,168 @@
+import { FaUserAlt } from "react-icons/fa";
+import { Route, Routes, Link } from "react-router-dom";
+import ExpertManagement from "../pages/ExpertManagement/ExpertManagement";
+import IndustryManagement from "../pages/IndustryManagement/IndustryManagement";
+import CurriculumDeveloperManagement from "../pages/CurriculumDeveloperManagement";
+import Sidebar from "./Sidebar";
+import {
+  BsFillBarChartLineFill,
+  BsBookFill,
+  BsFillDiagram3Fill,
+  BsGearFill,
+  BsFillFileEarmarkArrowDownFill,
+  BsLayers,
+  BsChatSquareTextFill,
+} from "react-icons/bs";
+import Trending from "../pages/TrendingPortal/Trending";
+import PastReports from "../pages/PastReports/PastReports";
+import ExpertHome from "../pages/ExpertPortal/ExpertHome";
+import React, { useState } from "react";
+import StreamManagement from "../pages/StreamManagement/StreamManagement";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import { useAuth } from "../contexts/AuthContext";
+import Settings from "../pages/Settings/Settings";
+import UniversityRoutes from "../routes/UniversityRoutes";
+import BlogManagement from "../pages/BlogManagement/BlogManagement";
+
+function AdminHome() {
+  const { logout, currentUser } = useAuth();
+  const [isNavOpen, setIsNavOpen] = useState(true);
+
+  function modeSwitch() {
+    document.documentElement.classList.toggle("dark");
+  }
+
+  function toggleLogout() {
+    if (!currentUser) return;
+    document.querySelector(".logout").classList.toggle("hide");
+  }
+
+  function capitalizeFirstLetter(str) {
+    // converting first letter to uppercase
+    const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+    return capitalized;
+  }
+
+  // Sidebar
+  const links = [
+    "University",
+    "Streams",
+    "Experts",
+    "Industry",
+    "Curriculum Developers",
+    "Trending",
+    "Dashboard",
+    "Past Reports",
+    "Blog Management",
+    "Settings",
+  ];
+
+  const icons = [
+    <BsBookFill size={22} className="mx-2" />,
+    <BsLayers size={22} className="mx-2" />,
+    <BsFillDiagram3Fill size={22} className="mx-2" />,
+    <BsFillDiagram3Fill size={22} className="mx-2" />,
+    <BsBookFill size={22} className="mx-2" />,
+    <BsFillDiagram3Fill size={22} className="mx-2" />,
+    <BsFillBarChartLineFill size={22} className="mx-2" />,
+    <BsFillFileEarmarkArrowDownFill size={22} className="mx-2" />,
+    <BsChatSquareTextFill size={22} className="mx-2" />,
+    <BsGearFill size={22} className="mx-2" />,
+  ];
+
+  return (
+    <div className="app-container">
+      <div className="app-header">
+        <div className="app-header-left">
+          <button
+            className="app-icon-container"
+            onClick={() => setIsNavOpen((prev) => !prev)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="40"
+              width="40"
+              className="darkMode"
+            >
+              <path d="M6.375 30q-.583 0-.979-.396T5 28.625q0-.625.396-1.021.396-.396.979-.396h27.25q.583 0 .979.417t.396 1q0 .583-.396.979t-.979.396Zm0-8.625q-.583 0-.979-.396T5 20q0-.583.396-.979t.979-.396h27.25q.583 0 .979.396T35 20q0 .583-.396.979t-.979.396Zm0-8.583q-.583 0-.979-.417t-.396-1q0-.583.396-.979T6.375 10h27.25q.583 0 .979.396t.396.979q0 .625-.396 1.021-.396.396-.979.396Z" />
+            </svg>
+          </button>
+
+          <Link to="/" className="app-name">
+            AICTE Curriculum Control & Development Portal
+          </Link>
+        </div>
+        <div className="app-header-right">
+          <button
+            className="mode-switch"
+            title="Switch Theme"
+            onClick={modeSwitch}
+          >
+            <svg
+              className="moon"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <defs></defs>
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+            </svg>
+          </button>
+          <div className="profile">
+            <button className="profile-btn" onClick={toggleLogout}>
+              <FaUserAlt className="darkMode" size={"23px"} />
+              <span>
+                {currentUser &&
+                  (currentUser.displayName
+                    ? capitalizeFirstLetter(
+                        String(currentUser.displayName).toLowerCase()
+                      )
+                    : capitalizeFirstLetter(
+                        String(currentUser.email).toLowerCase()
+                      ).split("@")[0])}
+              </span>
+            </button>
+            {currentUser && (
+              <button
+                className="logout py-2 px-4 w-full btn-compatible rounded-lg hide hover:border-[#1f1c2e] hover:border-2"
+                onClick={async (e) => {
+                  e.preventDefault();
+                  logout();
+                }}
+              >
+                Log out
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+      {currentUser && currentUser.email === "admin@gmail.com" ? (
+        <div className="app-content">
+          <Sidebar links={links} icons={icons} isNavOpen={isNavOpen} />
+          <Routes>
+            <Route path="/*" element={<UniversityRoutes />} />
+            <Route path="/University/*" element={<UniversityRoutes />} />
+            <Route path="/Streams/*" element={<StreamManagement />} />
+            <Route path="/Experts/*" element={<ExpertManagement />} />
+            <Route path="/Industry/*" element={<IndustryManagement />} />
+            <Route path="/Curriculum%20Developers/*" element={<CurriculumDeveloperManagement />} />
+            <Route path="/Trending/*" element={<Trending />} />
+            <Route path="/Dashboard/*" element={<Dashboard />} />
+            <Route path="/Past%20Reports/*" element={<PastReports />} />
+            <Route path="/Blog%20Management/*" element={<BlogManagement />} />
+            <Route path="/Settings/*" element={<Settings />} />
+          </Routes>
+        </div>
+      ) : (
+        <ExpertHome />
+      )}
+    </div>
+  );
+}
+
+export default AdminHome;

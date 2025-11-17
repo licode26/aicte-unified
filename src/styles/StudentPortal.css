@@ -1,0 +1,1410 @@
+/* Student Portal Styles */
+.student-portal {
+  min-height: 100vh;
+  height: auto;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Header */
+.portal-header {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #374151;
+}
+
+.portal-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-welcome {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.user-welcome .logout-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.user-welcome .logout-btn:hover {
+  background: #dc2626;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: #9ca3af;
+  z-index: 1;
+}
+
+.search-input {
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 250px;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.filter-container {
+  margin-left: 1rem;
+}
+
+.domain-filter {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.domain-filter:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: none;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: #374151;
+  background: #f9fafb;
+}
+
+.tab-btn.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+  background: #eff6ff;
+}
+
+/* Content Area */
+.portal-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+  height: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+/* Universities Grid */
+.universities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.university-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.university-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.university-code {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.card-body p {
+  margin: 0.5rem 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.website-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.website-link:hover {
+  text-decoration: underline;
+}
+
+.card-footer {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.view-details-btn {
+  width: 100%;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.view-details-btn:hover {
+  background: #2563eb;
+}
+
+/* Curriculum Grid */
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.curriculum-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.curriculum-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.curriculum-card .card-header {
+  background: linear-gradient(135deg, #10b981, #059669);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.level-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.level-badge.undergraduate {
+  background: rgba(59, 130, 246, 0.2);
+  color: #1d4ed8;
+}
+
+.level-badge.postgraduate {
+  background: rgba(168, 85, 247, 0.2);
+  color: #7c3aed;
+}
+
+.level-badge.diploma {
+  background: rgba(245, 158, 11, 0.2);
+  color: #d97706;
+}
+
+.download-btn {
+  display: inline-block;
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #059669;
+}
+
+/* Coming Soon */
+.coming-soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.coming-soon-content {
+  text-align: center;
+  color: #6b7280;
+}
+
+.coming-soon-icon {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.coming-soon-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.3rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #374151;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.detail-row {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.detail-row strong {
+  min-width: 80px;
+  color: #374151;
+}
+
+.detail-row a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.detail-row a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .portal-title {
+    font-size: 1.5rem;
+  }
+
+  .search-input {
+    width: 200px;
+  }
+
+  .tab-navigation {
+    padding: 0 1rem;
+    overflow-x: auto;
+  }
+
+  .portal-content {
+    padding: 1rem;
+  }
+
+  .universities-grid,
+  .curriculum-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Experts Section */
+.experts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.expert-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.expert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.expert-card .expert-header {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.expert-avatar {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  height: 60px;
+}
+
+.expert-info h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.expert-designation {
+  margin: 0 0 0.5rem 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.domain-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.domain-badge.large {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.expert-card .expert-body {
+  padding: 1.5rem;
+}
+
+.expert-specialization {
+  margin-bottom: 1rem;
+}
+
+.expert-specialization h4 {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.expert-specialization p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.expert-experience {
+  margin-bottom: 1rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.expert-experience strong {
+  color: #374151;
+}
+
+.expert-contact {
+  margin-bottom: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.contact-icon {
+  color: #10b981;
+  min-width: 16px;
+}
+
+.expert-actions {
+  padding: 1rem 1.5rem;
+  background: #f8fafc;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.view-profile-btn,
+.contact-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view-profile-btn {
+  background: #3b82f6;
+  color: white;
+  flex: 1;
+  justify-content: center;
+}
+
+.view-profile-btn:hover {
+  background: #2563eb;
+}
+
+.contact-btn {
+  background: #10b981;
+  color: white;
+}
+
+.contact-btn:hover {
+  background: #059669;
+}
+
+.empty-experts {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #64748b;
+}
+
+.empty-experts .empty-icon {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-experts h3 {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+}
+
+.empty-experts p {
+  margin: 0;
+}
+
+/* Expert Modal */
+.expert-modal-content {
+  max-width: 600px;
+  width: 90%;
+}
+
+.expert-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.expert-avatar-large {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  height: 80px;
+}
+
+.expert-profile-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+  font-size: 1.2rem;
+}
+
+.organization {
+  margin: 0 0 0.75rem 0;
+  color: #64748b;
+}
+
+.expert-profile-details {
+  margin-bottom: 2rem;
+}
+
+.detail-section {
+  margin-bottom: 1.5rem;
+}
+
+.detail-section h4 {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.detail-section p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-details .contact-item a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.contact-details .contact-item a:hover {
+  text-decoration: underline;
+}
+
+.expert-profile-actions {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.contact-expert-btn {
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.contact-expert-btn:hover {
+  background: #059669;
+}
+
+/* Seminars Section */
+.seminars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.seminar-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.seminar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.seminar-header {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seminar-date {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date-icon {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.date-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.time {
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.duration-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.seminar-card .seminar-body {
+  padding: 1.5rem;
+}
+
+.seminar-card .seminar-body h3 {
+  margin: 0 0 1rem 0;
+  color: #1e293b;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.seminar-teacher,
+.seminar-topic {
+  margin: 0 0 0.75rem 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.seminar-teacher strong,
+.seminar-topic strong {
+  color: #374151;
+}
+
+.seminar-objective,
+.seminar-description {
+  margin: 1rem 0;
+}
+
+.seminar-objective h4,
+.seminar-description h4 {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.seminar-objective p,
+.seminar-description p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.seminar-tags {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.seminar-tags .tag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.seminar-stats {
+  margin: 1rem 0 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.participants {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.seminar-actions {
+  padding: 1rem 1.5rem;
+  background: #f8fafc;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.view-details-btn,
+.register-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.view-details-btn {
+  background: #3b82f6;
+  color: white;
+  flex: 1;
+}
+
+.view-details-btn:hover {
+  background: #2563eb;
+}
+
+.register-btn {
+  background: #10b981;
+  color: white;
+}
+
+.register-btn:hover:not(:disabled) {
+  background: #059669;
+}
+
+.register-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.empty-seminars {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #64748b;
+}
+
+.empty-seminars .empty-icon {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-seminars h3 {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+}
+
+.empty-seminars p {
+  margin: 0;
+}
+
+/* Seminar Modal */
+.seminar-modal-content {
+  max-width: 700px;
+  width: 90%;
+}
+
+.seminar-details-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.seminar-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.meta-icon {
+  color: #8b5cf6;
+  margin-top: 0.25rem;
+  min-width: 20px;
+}
+
+.meta-item strong {
+  display: block;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.meta-item p {
+  margin: 0;
+  color: #64748b;
+}
+
+.seminar-details-content {
+  margin-bottom: 2rem;
+}
+
+.registration-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.registered-count {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: width 0.3s ease;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tags-list .tag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.seminar-modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.register-seminar-btn,
+.join-meeting-btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.register-seminar-btn {
+  background: #10b981;
+  color: white;
+}
+
+.register-seminar-btn:hover:not(:disabled) {
+  background: #059669;
+}
+
+.register-seminar-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.join-meeting-btn {
+  background: #8b5cf6;
+  color: white;
+}
+
+.join-meeting-btn:hover {
+  background: #7c3aed;
+}
+
+/* Internships Section */
+.internships-section {
+  padding: 20px 0;
+}
+
+.internships-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.internship-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.internship-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.internship-card .card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+}
+
+.internship-card .card-header h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+}
+
+.company-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.internship-card .card-body {
+  padding: 20px;
+}
+
+.internship-description {
+  margin-bottom: 15px;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.internship-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.detail-item {
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.detail-item strong {
+  color: #2c3e50;
+}
+
+.internship-requirements h4 {
+  margin: 15px 0 8px 0;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.internship-requirements p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.internship-card .card-footer {
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.apply-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.apply-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Hackathons Section */
+.hackathons-section {
+  padding: 20px 0;
+}
+
+.hackathons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.hackathon-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hackathon-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hackathon-card .card-header {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hackathon-card .card-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.status-badge.active {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.hackathon-card .card-body {
+  padding: 20px;
+}
+
+.hackathon-description {
+  margin-bottom: 15px;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.hackathon-dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.date-item {
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.date-item strong {
+  color: #2c3e50;
+}
+
+.hackathon-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.hackathon-prizes h4,
+.hackathon-problem h4 {
+  margin: 15px 0 8px 0;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.hackathon-prizes p,
+.hackathon-problem p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.hackathon-card .card-footer {
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.register-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Empty States */
+.empty-internships,
+.empty-hackathons {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+  color: #dee2e6;
+  margin-bottom: 20px;
+}
+
+.empty-internships h3,
+.empty-hackathons h3 {
+  color: #495057;
+  margin-bottom: 10px;
+}
+
+.empty-internships p,
+.empty-hackathons p {
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .student-portal {
+    padding: 10px;
+  }
+
+  .portal-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .tab-navigation {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .search-container {
+    width: 100%;
+    max-width: none;
+  }
+
+  .universities-grid,
+  .curriculum-grid,
+  .experts-grid,
+  .seminars-grid,
+  .internships-grid,
+  .hackathons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .university-card,
+  .curriculum-card,
+  .expert-card,
+  .seminar-card,
+  .internship-card,
+  .hackathon-card {
+    margin: 0;
+  }
+
+  .hackathon-dates {
+    grid-template-columns: 1fr;
+  }
+
+  .hackathon-details {
+    grid-template-columns: 1fr;
+  }
+}
